@@ -6,12 +6,20 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:44:50 by anisabel          #+#    #+#             */
-/*   Updated: 2026/01/13 23:15:35 by anisabel         ###   ########.fr       */
+/*   Updated: 2026/01/14 00:08:18 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/pipex.h"
 
+void	ft_putstr_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
+}
 char	*ft_get_path(char **envp, char *cmd)
 {
 	char	**full_path;

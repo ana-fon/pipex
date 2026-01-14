@@ -6,7 +6,7 @@
 /*   By: anisabel <anisabel@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:44:38 by anisabel          #+#    #+#             */
-/*   Updated: 2026/01/13 16:44:38 by anisabel         ###   ########.fr       */
+/*   Updated: 2026/01/14 13:23:33 by anisabel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 # define EXIT_NOTFOUND 127
 # define EXIT_INVALID 128
 
-# include "../lib/libft/libft/libft.h"
-# include <stdio.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <sys/types.h>
-# include <sys/wait.h>
-# include <errno.h>
-# include <string.h>
+# include 	<stdio.h>
+#include	<stdlib.h>
+# include 	<unistd.h>
+# include 	<fcntl.h>
+# include 	<sys/types.h>
+# include 	<sys/wait.h>
+# include 	<errno.h>
+# include 	<string.h>
 
 typedef struct s_pipeline
 {
@@ -57,6 +57,11 @@ int		ft_wait(pid_t pid1, pid_t pid2);
 void	ft_process(char **argv, char **envp);
 void	cleanup_malloc(int **pipes, int count);
 int		wait_and_get_exit_status(pid_t *pids, int num_cmds);
+void	ft_putstr_fd(char *s, int fd);
+char	**ft_split(char const *s, char c);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
 
 //pipes
 int		**create_pipes(int num_pipes, t_pipeline *data);
